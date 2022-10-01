@@ -1,0 +1,210 @@
+<!doctype html>
+<html lang="en">
+
+
+<!-- === Header Starts === -->
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+  <title>GeoD</title>
+
+  <link href="./assets/bootstrap.min.css" rel="stylesheet">
+  <link href="./assets/font.css" rel="stylesheet" type="text/css">
+  <link href="./assets/style.css" rel="stylesheet" type="text/css">
+</head>
+<!-- === Header Ends === -->
+
+
+<body>
+
+
+<!-- === Home Section Starts === -->
+<div class="section">
+  <!-- === Title Starts === -->
+  <div class="header">
+    <div class="title", style="padding-top: 25pt;">
+      Improving 3D-aware Image Synthesis with A <br>
+      Geometry-aware Discriminator
+    </div>
+    <h2 style="font-size:20px;text-align:center;">NeurIPS 2022</h2>
+  </div>
+  <!-- === Title Ends === -->
+  <div class="author">
+    <a href="https://vivianszf.github.io/" target="_blank">Zifan Shi</a><sup>1</sup>&nbsp;&nbsp;&nbsp;&nbsp;
+    <a href="https://justimyhxu.github.io/" target="_blank">Yinghao Xu</a><sup>2</sup>&nbsp;&nbsp;&nbsp;&nbsp;
+    <a href="https://shenyujun.github.io/" target="_blank">Yujun Shen</a><sup>3</sup>&nbsp;&nbsp;&nbsp;&nbsp;
+    <a href="https://sites.google.com/site/zhaodeli/" target="_blank">Deli Zhao</a><sup>3</sup>&nbsp;&nbsp;&nbsp;&nbsp;
+    <a href="https://cqf.io/" target="_blank">Qifeng Chen</a><sup>1</sup>&nbsp;&nbsp;&nbsp;&nbsp;
+    <a href="https://sites.google.com/view/dyyeung" target="_blank">Dit-Yan Yeung</a><sup>1</sup>
+    
+  </div>
+  <div class="institution">
+    <sup>1</sup>HKUST &nbsp;&nbsp;&nbsp;&nbsp;
+    <sup>2</sup>CUHK &nbsp;&nbsp;&nbsp;&nbsp;
+    <sup>3</sup>Ant Group
+  </div>
+  <div class="link">
+    [<a href="https://arxiv.org/pdf/xxxx.pdf" target="_blank">Paper</a>]&nbsp;&nbsp;
+    [<a href="https://github.com/vivianszf/geod" target="_blank">Code</a>]&nbsp;&nbsp;
+    [<a href="https://youtu.be/qqAxEMSUYiE" target="_blank">Demo</a>]
+  </div>
+  <div class="teaser">
+    <img src="./assets/teaser.jpg">
+  </div>
+  <div class="body">
+    <b>Figure:</b> (a) Existing 3D-aware GANs where only the generator is made 3D-aware with the help of NeRF.
+    (b) GeoD where the discriminator supervises the generator with the extracted geometry.
+  </div>
+</div>
+<!-- === Home Section Ends === -->
+
+
+<!-- === Overview Section Starts === -->
+<div class="section">
+  <div class="title">Overview</div>
+  <div class="body">
+    This work aims at improving 3D-aware image synthesis from the discriminator's perspective.
+    Despite the advancement of synthesis quality, existing methods fail to obtain moderate 3D 
+    shapes. We argue that, considering the two-player game in the formulation of GANs, 
+    <i>only making the generator 3D-aware is not enough</i>. To address this issue, we propose 
+    <b>GeoD</b> through learning a geometry-aware discriminator to improve 3D-aware GANs. 
+    Concretely, besides differentiating real and fake samples from the 2D image space, the 
+    discriminator is additionally asked to derive the geometry information from the inputs, 
+    which is then applied as the guidance of the generator. Such a simple yet effective design 
+    facilitates learning substantially more accurate 3D shapes. Extensive experiments on various 
+    generator architectures and training datasets verify the superiority of GeoD over 
+    state-of-the-art alternatives. Moreover, our approach is registered as a general framework such 
+    that a more capable discriminator (<i>i.e.</i>, with a third task of novel view synthesis 
+    beyond domain classification and geometry extraction) can further assist the generator with 
+    a better multi-view consistency.
+  </div>
+</div>
+<!-- === Overview Section Ends === -->
+
+
+<!-- === Result Section Starts === -->
+<div class="section">
+  <div class="title">Results</div>
+  <div class="body">
+
+    Qualitative comparison with pi-GAN as the base model.
+
+    <table width="100%" style="margin: 20pt 0; text-align: center;">
+      <tr>
+        <td><img src="./assets/fig_pigan.jpg" width="90%"></td>
+      </tr>
+    </table>
+
+    3D reconstruction and novel view synthesis on real data with GAN inversion.
+
+    <table width="100%" style="margin: 20pt 0; text-align: center;">
+      <tr>
+        <td><img src="./assets/inversion.jpg" width="90%"></td>
+      </tr>
+    </table>
+
+  </div>
+</div>
+<!-- === Result Section Ends === -->
+
+<!-- === Demo video Section Starts === -->
+<div class="section">
+  <div class="title">Demo</div>
+  <div class="body">
+
+    <p style="margin-top: 20pt"><a name="demo"></a></p>
+    We include a demo video, which shows the continuous 3D control achieved by our GeoD.
+    <div style="position: relative; padding-top: 50%; margin: 20pt auto; text-align: center;">
+      <iframe src="https://www.youtube.com/embed/qqAxEMSUYiE" frameborder=0
+              style="position: absolute; top: 2.5%; left: 2.5%; width: 95%; height: 100%;"
+              allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+              allowfullscreen></iframe>
+    </div>
+
+  </div>
+</div>
+<!-- === Demo Video Section Ends === -->
+
+
+<!-- === Reference Section Starts === -->
+<div class="section">
+  <div class="bibtex">BibTeX</div>
+<pre>
+  @inproceedings{shi2022improving,
+    title   = {Improving 3D-aware Image Synthesis with A Geometry-aware Discriminator},
+    author  = {Shi, Zifan and Xu, Yinghao and Shen, Yujun and Zhao, Deli and Chen, Qifeng and Yeung, Dit-Yan},
+    booktitle = {NeurIPS},
+    year    = {2022}
+  }
+
+</pre>
+
+
+<div class="ref">Related Work</div>
+
+
+<div class="citation">
+  <div class="image"><img src="./assets/graf.jpg"></div>
+  <div class="comment">
+    <a href="https://arxiv.org/pdf/2007.02442.pdf" target="_blank">
+      Katja Schwarz, Yiyi Liao, Michael Niemeyer, Andreas Geiger.
+      GRAF: Generative Radiance Fields for 3D-Aware Image Synthesis.
+      NeurIPS, 2020.</a><br>
+    <b>Comment:</b>
+    Proposes the generative radiance fields for 3D-aware image synthesis.
+  </div>
+</div>
+
+<div class="citation">
+  <div class="image"><img src="./assets/giraffe.jpg"></div>
+  <div class="comment">
+    <a href="https://arxiv.org/pdf/2011.12100.pdf" target="_blank">
+      Michael Niemeyer, Andreas Geiger.
+      GIRAFFE: Representing Scenes as Compositional Generative Neural Feature Fields.
+      CVPR, 2021.</a><br>
+    <b>Comment:</b>
+    Proposes the compositional generative neural feature fields for scene synthesis.
+  </div>
+</div>
+
+<div class="citation">
+  <div class="image"><img src="./assets/pigan.jpg"></div>
+  <div class="comment">
+    <a href="https://arxiv.org/pdf/2012.00926.pdf" target="_blank">
+      Eric R. Chan, Marco Monteiro, Petr Kellnhofer, Jiajun Wu, Gordon Wetzstein.
+      pi-GAN: Periodic Implicit Generative Adversarial Networks for 3D-Aware Image Synthesis.
+      CVPR, 2021.</a><br>
+    <b>Comment:</b>
+    Proposes the periodic implicit generative neural feature fields for 3d-aware image synthesis.
+  </div>
+</div>
+
+<div class="citation">
+  <div class="image"><img src="./assets/stylenerf.jpg"></div>
+  <div class="comment">
+    <a href="https://arxiv.org/pdf/2110.08985.pdf" target="_blank">
+      Jiatao Gu, Lingjie Liu, Peng Wang, Christian Theobalt.
+      StyleNeRF: A Style-based 3D-Aware Generator for High-resolution Image Synthesis.
+      ICLR, 2022.</a><br>
+    <b>Comment:</b>
+    Proposes to integrate the neural radiance field into a style-based generator.
+  </div>
+</div>
+
+<div class="citation">
+  <div class="image"><img src="./assets/volumegan.jpg"></div>
+  <div class="comment">
+    <a href="https://arxiv.org/pdf/2112.10759.pdf" target="_blank">
+      Yinghao Xu, Sida Peng, Ceyuan Yang, Yujun Shen, Bolei Zhou.
+      3D-aware Image Synthesis via Learning Structural and Textural Representations.
+      CVPR, 2022.</a><br>
+    <b>Comment:</b>
+    Proposes to explicitly learn a structural representation and a texture representation.
+  </div>
+</div>
+
+<!-- === Reference Section Ends === -->
+
+
+</body>
+</html>
