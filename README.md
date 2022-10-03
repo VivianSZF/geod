@@ -8,7 +8,7 @@
 > Zifan Shi, Yinghao Xu, Yujun Shen, Deli Zhao, Qifeng Chen, Dit-Yan Yeung <br>
 > *Thirty-sixth Conference on Neural Information Processing Systems (NeurIPS 2022)*
 
-[[Paper](https://arxiv.org/pdf/xxxx.pdf)]
+[[Paper](https://arxiv.org/pdf/2209.15637.pdf)]
 [[Project Page](https://vivianszf.github.io/geod)]
 [[Demo](https://youtu.be/qqAxEMSUYiE)]
 
